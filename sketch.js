@@ -63,11 +63,12 @@ if(keyDown("space")&&monkey.y>=200){
   monkey.velocityY=0
   ground.velocityX=0
   FoodGroup.velocityX=0
+  FoodGroup.velocityY=0
+  obstacleGroup.velocityY=0
   obstacleGroup.velocityX=0
   gameState="end"
-  text("game over",200,200)
  }
-  
+  text("game over",200,200)
   survivalTime = createSprite(10,10,20,20)
   stroke("white")
   textSize(20)
