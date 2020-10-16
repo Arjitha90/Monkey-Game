@@ -56,6 +56,7 @@ if(keyDown("space")&&monkey.y>=200){
   }
  
  if(obstaclesGroup.isTouching(monkey)){
+  text("game over",200,200)
   obstaclesGroup.destroyEach()
   FoodGroup.destroyEach()
   monkey.destroy()
@@ -66,9 +67,11 @@ if(keyDown("space")&&monkey.y>=200){
   FoodGroup.velocityY=0
   obstacleGroup.velocityY=0
   obstacleGroup.velocityX=0
-  gameState="end"
+  score=0
+  obstacleGroup.lifetime=1
+  FoodGroup.lifetime=1
  }
-  text("game over",200,200)
+  
   survivalTime = createSprite(10,10,20,20)
   stroke("white")
   textSize(20)
