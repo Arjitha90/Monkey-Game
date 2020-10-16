@@ -2,6 +2,7 @@ var monkey , monkey_running
 var banana ,bananaImage, obstacle, obstacleImage
 var FoodGroup, obstaclesGroup,Food,obstacles,jungle
 var score
+var gameState =" play"
 var survivalTime=0
 function preload(){
  
@@ -38,7 +39,7 @@ function setup() {
 
 function draw() {
   background(100)
-
+if (gameState==="play"){
   
 if(keyDown("space")&&monkey.y>=200){
   monkey.velocityY=-12
@@ -56,20 +57,8 @@ if(keyDown("space")&&monkey.y>=200){
   }
  
  if(obstaclesGroup.isTouching(monkey)){
-  text("game over",200,200)
-  obstaclesGroup.destroyEach()
-  FoodGroup.destroyEach()
-  monkey.destroy()
-  monkey.velocityX=0
-  monkey.velocityY=0
-  ground.velocityX=0
-  FoodGroup.velocityX=0
-  FoodGroup.velocityY=0
-  obstacleGroup.velocityY=0
-  obstacleGroup.velocityX=0
-  score=0
-  obstacleGroup.lifetime=1
-  FoodGroup.lifetime=1
+ 
+  gameState="end"
  }
   
   survivalTime = createSprite(10,10,20,20)
@@ -83,7 +72,10 @@ if(keyDown("space")&&monkey.y>=200){
   survivalTime=Math.ceil(frameCount/frameRate())
   
   text("survival time: "+survivalTime,100,50)
- 
+}
+ if (gameState==="end"){
+   text("game over",200,200)
+ }
     Food()
   obstacles()
   
