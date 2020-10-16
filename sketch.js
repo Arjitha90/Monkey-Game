@@ -60,6 +60,7 @@ if(keyDown("space")&&monkey.y>=200){
   FoodGroup.destroyEach()
   monkey.destroy()
   monkey.velocity=0
+  gameState="end"
   text("game over",200,200)
  }
   
