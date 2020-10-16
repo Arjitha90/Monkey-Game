@@ -59,7 +59,11 @@ if(keyDown("space")&&monkey.y>=200){
   obstaclesGroup.destroyEach()
   FoodGroup.destroyEach()
   monkey.destroy()
-  monkey.velocity=0
+  monkey.velocityX=0
+  monkey.velocityY=0
+  ground.velocityX=0
+  FoodGroup.velocityX=0
+  obstacleGroup.velocityX=0
   gameState="end"
   text("game over",200,200)
  }
