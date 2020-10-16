@@ -54,6 +54,12 @@ if(keyDown("space")&&monkey.y>=200){
   if(monkey.isTouching(FoodGroup)){
    score=score+1
   }
+ 
+ if(monkey.isTouching(obstaclesGroup)){
+  text("game over",200,200)
+  obstaclesGroup.destroyEach()
+  FoodGroup.destroyEach()
+ }
   
   survivalTime = createSprite(10,10,20,20)
   stroke("white")
