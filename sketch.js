@@ -55,7 +55,7 @@ if(keyDown("space")&&monkey.y>=200){
    score=score+1
   }
  
- if(monkey.isTouching(obstaclesGroup)){
+ if(obstaclesGroup.isTouching(monkey)){
   text("game over",200,200)
   obstaclesGroup.destroyEach()
   FoodGroup.destroyEach()
