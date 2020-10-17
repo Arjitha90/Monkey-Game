@@ -40,7 +40,7 @@ function setup() {
 function draw() {
   background(100)
 if (gameState==="play"){
-  
+  ground.x=ground.width/2
 if(keyDown("space")&&monkey.y>=200){
   monkey.velocityY=-12
  
@@ -49,7 +49,7 @@ if(keyDown("space")&&monkey.y>=200){
   monkey.velocityY = monkey.velocityY+0.8
   monkey.collide(ground)
  
-  ground.x=ground.width/2
+  
   
   
   if(monkey.isTouching(FoodGroup)){
